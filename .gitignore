@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ChatApp/Migrations
+/ChatApp/bin/Debug/net8.0
+/ChatApp/.vs/ChatApp/DesignTimeBuild
+/ChatApp/.vs/ChatApp/FileContentIndex
+/ChatApp/.vs/ProjectEvaluation
