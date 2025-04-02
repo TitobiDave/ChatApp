@@ -1,0 +1,5 @@
+﻿<form asp-action="Update" asp-controller="Home" method="post" enctype="multipart/form-data">
+    <input  value="@ViewBag.UserId" name="userId"/>
+    <input type="file" name="file" required />
+    <button type="submit">Upload</button>
+</form>

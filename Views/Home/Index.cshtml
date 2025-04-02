@@ -1,0 +1,14 @@
+﻿<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.7/signalr.min.js" integrity="sha512-7SRCYIJtR6F8ocwW7UxW6wGKqbSyqREDbfCORCbGLatU0iugBLwyOXpzhkPyHIFdBO0K2VCu57fvP2Twgx1o2A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<div class="w-100 h-100 bg-opacity-25" id="messageBox" hidden="hidden">
+    
+    <div class="bg-dark w-100  bg-success" style="height: 10%;"></div>
+    <input id="userId" class="position-absolute" hidden value="@User.Claims.FirstOrDefault(x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value" />
+    <div style="height: 80%;" id="messagesList" class="d-flex flex-column overflow-auto"></div>
+    <div class="d-flex align-content-center  w-100" style="height: 10%;">
+        <input placeholder="Type a message" class="w-100 border-0 rounded-0  text-white px-2 bg-dark  "  id="message"/>
+        <button class="btn btn-dark border-0 rounded-0 " id="sendButton">Send</button>
+    </div> 
+</div>
+

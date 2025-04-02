@@ -1,0 +1,28 @@
+﻿@model List<ChatUser>
+<div class="d-flex align-items-center  mb-lg-4 w-100">
+    <form class="w-100">
+        <input class="form-control border-0 w-100" placeholder="Search chat" />
+    </form>
+</div>
+
+<ul class="nav nav-pills flex-column mb-auto">
+    @foreach (var items in Model.Where(u => u.Id !=  User.FindFirst("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value))
+    {
+        <li class="nav-item mb-lg-4" id="userBox">
+
+            <div class="d-flex justify-content-start rounded-2 p-2 gap-1 align-item-center active  text-start btn-outline-secondary">
+                <img src="@Url.Content(items.imagePath)"  class="rounded-circle p-0 m-0" style="width: 50px; height: 50px;" />
+                <input value="@items.Id" id="receiverId" hidden />
+                <div href="#" class="nav-link text-white p-0 m-0 h-auto w-100" aria-current="page">
+                    <div class=" w-100 d-flex align-content-center justify-content-between"><p class="p-0 m-0 fw-bold ">@items.UserName</p> <span>9:03 AM</span></div>
+                    @if (items?.messages.LastOrDefault() != null)
+                    {
+                        <p class="p-0 m-0 " id="latestMessage">@items.messages.LastOrDefault().message</p>
+                    }
+                </div>
+            </div>
+        </li>
+    }
+
+
+</ul>
